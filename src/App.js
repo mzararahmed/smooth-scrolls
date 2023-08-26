@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SmoothPageScroll from './Components/SmoothPageScroll';
+import FullPageReactApp from './Components/FullPageReactApp';
+import FullPageReact from './Components/FullPageReact';
+import SmoothScroll from './Components/SmoothScroll';
 import './App.css';
-
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<FullPageReact />} />
+          <Route exact path='/flick' element={<FullPageReact />} />
+          <Route exact path='/scroll' element={<SmoothPageScroll />} />
+          <Route path='/scrollto' element={<SmoothScroll />} />
+          <Route path='/flickto' element={<FullPageReactApp />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
