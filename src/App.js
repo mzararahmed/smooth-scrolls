@@ -9,10 +9,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<FullPageReact />} />
+          <Route exact path='/flick' element={<FullPageReact />} />
           <Route exact path='/scroll' element={<SmoothPageScroll />} />
           <Route path='/scrollto' element={<SmoothScroll />} />
-          <Route path='/flickto' element={<FullPageReactApp />} />
+          <Route path='/' element={<FullPageReactApp />} />
         </Routes>
       </BrowserRouter>
     </div>
