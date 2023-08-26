@@ -10,7 +10,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<FullPageReact />} />
-          <Route exact path='/flick' element={<FullPageReact />} />
           <Route exact path='/scroll' element={<SmoothPageScroll />} />
           <Route path='/scrollto' element={<SmoothScroll />} />
           <Route path='/flickto' element={<FullPageReactApp />} />
