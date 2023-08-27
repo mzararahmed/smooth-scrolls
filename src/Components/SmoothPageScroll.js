@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TweenLite } from "gsap/all";
+import gsap from "gsap/all";
 
 class SmoothPageScroll extends Component {
   componentDidMount() {
@@ -8,7 +8,7 @@ class SmoothPageScroll extends Component {
 
     this.scroller = {
       target: document.querySelector("#scroll-container"),
-      ease: 0.1, // <= scroll speed
+      ease: 0.05, // <= scroll speed
       endY: 0,
       y: 0,
       resizeRequest: 1,
@@ -17,7 +17,7 @@ class SmoothPageScroll extends Component {
 
     this.requestId = null;
 
-    TweenLite.set(this.scroller.target, {
+    gsap.set(this.scroller.target, {
       rotation: 0.01,
       force3D: true,
     });
@@ -51,7 +51,7 @@ class SmoothPageScroll extends Component {
       this.scroller.scrollRequest = 0;
     }
 
-    TweenLite.set(this.scroller.target, {
+    gsap.set(this.scroller.target, {
       y: -this.scroller.y,
     });
 
